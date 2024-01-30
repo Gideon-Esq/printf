@@ -5,18 +5,15 @@
  * @format: This is the parameter for to be taken by the _printf function.
  * Return: length if success.
  */
-
 int _printf(const char *format, ...)
 {
 	va_list(ap);
 	int length;
 
 	va_start(ap, format);
-
-
 	while (*format != '\0')
 	{
-		if (*format != '%' && *format != '\\')
+		if (*format != '%')
 		{
 			printchar(*format);
 			length++;
@@ -42,10 +39,14 @@ int _printf(const char *format, ...)
 					length++;
 				}
 			}
+			else if (*format == '%')
+			{
+				printchar('%');
+				length++;
+			}
 		}
 		format++;
 	}
 	va_end(ap);
 	return (length);
 }
-
