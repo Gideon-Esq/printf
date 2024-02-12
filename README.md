@@ -38,5 +38,5 @@ va_arg (man 3 va_arg)
 
 
 
-This is is done with effective collaboration by a team of two
+This is is done with effective collaboration by a team of two members
 
